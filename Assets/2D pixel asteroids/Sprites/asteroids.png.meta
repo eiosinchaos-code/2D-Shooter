@@ -1,94 +1,68 @@
 fileFormatVersion: 2
-guid: 3cbc7c88c4f2c4a40926952f63634886
+guid: 1bd6c74c058d5f143a391104c445e845
+AssetOrigin:
+  serializedVersion: 1
+  productId: 136477
+  packageName: 2D Pixel Asteroids
+  packageVersion: 1.0
+  assetPath: Assets/2D pixel asteroids/Sprites/asteroids.png
+  uploadId: 286166
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8092295105046505211
-    second: explosion_0
+      213: 21300000
+    second: aster-huge-1
   - first:
-      213: -5243772346084840235
-    second: explosion_1
+      213: 21300002
+    second: aster-huge-2
   - first:
-      213: -4009157606203222040
-    second: explosion_2
+      213: 21300004
+    second: aster-huge-3
   - first:
-      213: 3730887761424324059
-    second: explosion_3
+      213: 21300006
+    second: aster-big-1
   - first:
-      213: -4927540249515241657
-    second: explosion_4
+      213: 21300008
+    second: aster-big-2
   - first:
-      213: 5684552838703836615
-    second: explosion_5
+      213: 21300010
+    second: aster-big-3
   - first:
-      213: -1000500801407918923
-    second: explosion_6
+      213: 21300012
+    second: aster-big-4
   - first:
-      213: -3556220708966662747
-    second: explosion_7
+      213: 21300014
+    second: aster-med-1
   - first:
-      213: 950242065716622878
-    second: explosion_8
+      213: 21300016
+    second: aster-med-2
   - first:
-      213: 1871906383385562927
-    second: explosion_9
+      213: 21300018
+    second: aster-med-3
   - first:
-      213: -5371098934410574880
-    second: explosion_10
+      213: 21300020
+    second: aster-med-4
   - first:
-      213: -1551774312519300948
-    second: explosion_11
+      213: 21300022
+    second: aster-med-5
   - first:
-      213: 8761117149865828687
-    second: explosion_12
+      213: 21300024
+    second: aster-small-1
   - first:
-      213: 2349602722129606322
-    second: explosion_13
+      213: 21300026
+    second: aster-small-2
   - first:
-      213: 7773491377804077996
-    second: explosion_14
+      213: 21300028
+    second: aster-small-3
   - first:
-      213: 1467323325375670837
-    second: explosion_15
+      213: 21300030
+    second: aster-small-4
   - first:
-      213: 4542189021846940948
-    second: explosion_16
+      213: 21300032
+    second: aster-small-5
   - first:
-      213: -8590846737339631838
-    second: explosion_17
-  - first:
-      213: 3996794502770762282
-    second: explosion_18
-  - first:
-      213: -5328293131749856865
-    second: explosion_19
-  - first:
-      213: 8757869890930774319
-    second: explosion_20
-  - first:
-      213: 5583760979089145045
-    second: explosion_21
-  - first:
-      213: -6611490010577821925
-    second: explosion_22
-  - first:
-      213: 3700629028062089341
-    second: explosion_23
-  - first:
-      213: 4321349126066106873
-    second: explosion_24
-  - first:
-      213: 8258980228945939678
-    second: explosion_25
-  - first:
-      213: 5457886006356025943
-    second: explosion_26
-  - first:
-      213: 835678513910153455
-    second: explosion_27
-  - first:
-      213: -2014795597190648048
-    second: explosion_28
+      213: 21300034
+    second: aster-small-6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,7 +95,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -135,7 +109,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -150,479 +124,457 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: explosion_0
+      name: aster-huge-1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 94
-        width: 34
-        height: 34
+        x: 8
+        y: 259
+        width: 155
+        height: 144
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 509121e0a7462bf80800000000000000
-      internalID: -8092295105046505211
+      spriteID: 857afab04c492fe4f8a33dad42bbdcab
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_1
+      name: aster-huge-2
       rect:
         serializedVersion: 2
-        x: 39
-        y: 94
-        width: 34
-        height: 34
+        x: 179
+        y: 263
+        width: 151
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5dca89c75d06a37b0800000000000000
-      internalID: -5243772346084840235
+      spriteID: 95471bcab3b035649988b8dcd7b1308b
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_2
+      name: aster-huge-3
       rect:
         serializedVersion: 2
-        x: 73
-        y: 94
-        width: 34
-        height: 34
+        x: 346
+        y: 253
+        width: 152
+        height: 140
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8e793b9066c9c58c0800000000000000
-      internalID: -4009157606203222040
+      spriteID: 97531bc48911b904fb5c42613d00f8ff
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_3
+      name: aster-big-1
       rect:
         serializedVersion: 2
-        x: 107
-        y: 94
-        width: 34
-        height: 34
+        x: 0
+        y: 144
+        width: 107
+        height: 87
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bd59c84e6a6c6c330800000000000000
-      internalID: 3730887761424324059
+      spriteID: ebd35c73ccbd0ec49bee0f75700c06d0
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_4
+      name: aster-big-2
       rect:
         serializedVersion: 2
-        x: 141
-        y: 94
-        width: 34
-        height: 34
+        x: 131
+        y: 144
+        width: 98
+        height: 76
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 74f4433104cdd9bb0800000000000000
-      internalID: -4927540249515241657
+      spriteID: 9fdb203ac8275174aacfed58582461a8
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_5
+      name: aster-big-3
       rect:
         serializedVersion: 2
-        x: 175
-        y: 94
-        width: 34
-        height: 34
+        x: 240
+        y: 147
+        width: 90
+        height: 76
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7cd61e150b693ee40800000000000000
-      internalID: 5684552838703836615
+      spriteID: de6370cc3655ad540aeb1fd41dd9f3c0
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_6
+      name: aster-big-4
       rect:
         serializedVersion: 2
-        x: 209
-        y: 94
-        width: 34
-        height: 34
+        x: 363
+        y: 137
+        width: 93
+        height: 86
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5bc569e62d18d12f0800000000000000
-      internalID: -1000500801407918923
+      spriteID: 5cfb56944e1dbdb41b6868536365653b
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_7
+      name: aster-med-1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 56
-        width: 34
-        height: 34
+        x: 18
+        y: 64
+        width: 70
+        height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5ad772b5b14c5aec0800000000000000
-      internalID: -3556220708966662747
+      spriteID: 410a35b86a5e0084cab501cb12c1b40c
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_8
+      name: aster-med-2
       rect:
         serializedVersion: 2
-        x: 39
-        y: 56
-        width: 34
-        height: 34
+        x: 103
+        y: 63
+        width: 71
+        height: 61
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e163ca9cf10ff2d00800000000000000
-      internalID: 950242065716622878
+      spriteID: 45fae02393401584fbab2884899e64a7
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_9
+      name: aster-med-3
       rect:
         serializedVersion: 2
-        x: 73
-        y: 56
-        width: 34
-        height: 34
+        x: 191
+        y: 61
+        width: 67
+        height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f2f8b7a10f85af910800000000000000
-      internalID: 1871906383385562927
+      spriteID: 5cca314af8c11354bbcc46a79c14b079
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_10
+      name: aster-med-4
       rect:
         serializedVersion: 2
-        x: 107
-        y: 56
-        width: 34
-        height: 34
+        x: 265
+        y: 60
+        width: 64
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0e38af8f9f50675b0800000000000000
-      internalID: -5371098934410574880
+      spriteID: 06ecf1c30a158c341a01579307cd3a66
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_11
+      name: aster-med-5
       rect:
         serializedVersion: 2
-        x: 141
-        y: 56
-        width: 34
-        height: 34
+        x: 344
+        y: 60
+        width: 59
+        height: 57
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ca806b20c7df67ae0800000000000000
-      internalID: -1551774312519300948
+      spriteID: f10c3c7d6edf56f4b93593e8ba07e0f9
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_12
+      name: aster-small-1
       rect:
         serializedVersion: 2
-        x: 175
-        y: 56
-        width: 34
-        height: 34
+        x: 32
+        y: 5
+        width: 20
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f41e55121adb59970800000000000000
-      internalID: 8761117149865828687
+      spriteID: 8bcd1603e27081048a8e4cb96fb84948
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_13
+      name: aster-small-2
       rect:
         serializedVersion: 2
-        x: 209
-        y: 56
-        width: 34
-        height: 34
+        x: 64
+        y: 1
+        width: 27
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2b673df1a377b9020800000000000000
-      internalID: 2349602722129606322
+      spriteID: 34cd8867c8d310c46acf1cf867163949
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_14
+      name: aster-small-3
       rect:
         serializedVersion: 2
-        x: 5
-        y: 18
-        width: 34
-        height: 34
+        x: 110
+        y: 1
+        width: 26
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cabe29ee83df0eb60800000000000000
-      internalID: 7773491377804077996
+      spriteID: f905b37584492a44ab5b225076d5e17d
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_15
+      name: aster-small-4
       rect:
         serializedVersion: 2
-        x: 39
-        y: 18
-        width: 34
-        height: 34
+        x: 148
+        y: 4
+        width: 22
+        height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 53a69ab4acafc5410800000000000000
-      internalID: 1467323325375670837
+      spriteID: b5939e6deca863e41b9d00cb2cedf218
+      internalID: 21300030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_16
+      name: aster-small-5
       rect:
         serializedVersion: 2
-        x: 73
-        y: 18
-        width: 34
-        height: 34
+        x: 184
+        y: 4
+        width: 28
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 41daddd89d8190f30800000000000000
-      internalID: 4542189021846940948
+      spriteID: 275777cc633336648b74a4c999310f38
+      internalID: 21300032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion_17
+      name: aster-small-6
       rect:
         serializedVersion: 2
-        x: 107
-        y: 18
-        width: 34
-        height: 34
+        x: 222
+        y: 0
+        width: 25
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2273c0d986e27c880800000000000000
-      internalID: -8590846737339631838
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion_18
-      rect:
-        serializedVersion: 2
-        x: 141
-        y: 18
-        width: 34
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a22a2e1ac67777730800000000000000
-      internalID: 3996794502770762282
+      spriteID: 73efffa36fd655c41bd51afaf1c08a93
+      internalID: 21300034
       vertices: []
       indices: 
       edges: []
@@ -631,7 +583,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 92a47c0a4fba84248b93e073af820b33
+    spriteID: 79ad27d5aaefade418139c523c53e89e
     internalID: 0
     vertices: []
     indices: 
@@ -641,27 +593,26 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":34.0,"y":34.0},"gridSpriteOffset":{"x":5.0,"y":2.0},"gridSpritePadding":{"x":0.0,"y":4.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      explosion_0: -8092295105046505211
-      explosion_1: -5243772346084840235
-      explosion_10: -5371098934410574880
-      explosion_11: -1551774312519300948
-      explosion_12: 8761117149865828687
-      explosion_13: 2349602722129606322
-      explosion_14: 7773491377804077996
-      explosion_15: 1467323325375670837
-      explosion_16: 4542189021846940948
-      explosion_17: -8590846737339631838
-      explosion_18: 3996794502770762282
-      explosion_2: -4009157606203222040
-      explosion_3: 3730887761424324059
-      explosion_4: -4927540249515241657
-      explosion_5: 5684552838703836615
-      explosion_6: -1000500801407918923
-      explosion_7: -3556220708966662747
-      explosion_8: 950242065716622878
-      explosion_9: 1871906383385562927
+      aster-big-1: 21300006
+      aster-big-2: 21300008
+      aster-big-3: 21300010
+      aster-big-4: 21300012
+      aster-huge-1: 21300000
+      aster-huge-2: 21300002
+      aster-huge-3: 21300004
+      aster-med-1: 21300014
+      aster-med-2: 21300016
+      aster-med-3: 21300018
+      aster-med-4: 21300020
+      aster-med-5: 21300022
+      aster-small-1: 21300024
+      aster-small-2: 21300026
+      aster-small-3: 21300028
+      aster-small-4: 21300030
+      aster-small-5: 21300032
+      aster-small-6: 21300034
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
