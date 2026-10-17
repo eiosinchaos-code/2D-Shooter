@@ -1,8 +1,10 @@
 using UnityEngine;
+using static NewEmptyCSharpScript;
 
 public class SpawnMovingTargets : MonoBehaviour
 {
-    float timer = 0;
+    float timer = 0; 
+    float spawnInterval = 60f / GameData.spawnRatePerMinute;
     public GameObject newObject;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

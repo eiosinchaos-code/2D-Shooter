@@ -17,7 +17,8 @@ public class ManagePlayerHealth : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "target")
+        if (coll.gameObject.tag == "target" || coll.gameObject.tag == "bullet")
+                //if (coll.gameObject.tag ==
         {
             Destroy(coll.gameObject);
             DestroyPlayer();
