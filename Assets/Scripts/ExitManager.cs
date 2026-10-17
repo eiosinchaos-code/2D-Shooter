@@ -2,7 +2,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using static NewEmptyCSharpScript;
 
 public class ExitManager : MonoBehaviour
 {

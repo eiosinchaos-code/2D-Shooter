@@ -36,7 +36,7 @@ namespace SmallShips
                     bullet.GetComponent<SpriteRenderer>().sortingOrder = bulletSortingOrder;
                 }
                 Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-                rb.velocity = bulletSpeed * (-bulletStartPoses[index].up);
+                rb.linearVelocity = bulletSpeed * (-bulletStartPoses[index].up);
             }
         }
 
@@ -44,7 +44,7 @@ namespace SmallShips
         {
             GameObject bomb = (GameObject)Instantiate(bombPrefab, bombStartPos.position, bombStartPos.rotation);
             Rigidbody2D rb = bomb.GetComponent<Rigidbody2D>();
-            rb.velocity = bombSpeed * (-transform.up);
+            rb.linearVelocity = bombSpeed * (-transform.up);
         }
 
         bool IfIndexGood(int index)

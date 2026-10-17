@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public bool isPlayerBullet = true; // Check this for player bullets, uncheck for enemy bullets
+
     void Start()
     {
         // Automatically destroy the bullet after 10 seconds if it hits nothing
@@ -15,13 +17,22 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.CompareTag("target"))
+        if (isPlayerBullet)
         {
-            // Deal damage to the target's health script (takes 2 hits since health is 20 and damage is 10)
-            coll.gameObject.GetComponent<ManageTargetHealth>()?.gotHit(10);
-
-            // Only destroy the bullet (the target will destroy itself when health hits 0)
-            Destroy(gameObject);
+            // Player bullets should only damage targets or NPCs
+            if (coll.gameObject.CompareTag("target") || coll.gameObject.CompareTag("npc"))
+            {
+                coll.gameObject.GetComponent<ManageTargetHealth>()?.gotHit(10);
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            // Enemy bullets should only affect the player
+            if (coll.gameObject.CompareTag("Player") || coll.gameObject.name == "player")
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

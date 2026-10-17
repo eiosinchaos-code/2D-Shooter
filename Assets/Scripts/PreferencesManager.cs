@@ -1,18 +1,18 @@
-using TMPro; // Use TMPro if using TextMeshPro UI elements
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PreferencesManager : MonoBehaviour
 {
     public TMP_InputField nameInput;
     public TMP_Dropdown speedDropdown;
+    public TMP_Dropdown healthDropdown;
     public Slider spawnSlider;
     public TMP_Text spawnRateText;
 
     void Start()
     {
-        // Set default UI values
         if (spawnSlider != null)
         {
             spawnSlider.minValue = 1f;
@@ -39,14 +39,15 @@ public class PreferencesManager : MonoBehaviour
 
     public void SavePreferencesAndStartGame()
     {
+        // Save player name
         if (nameInput != null && !string.IsNullOrEmpty(nameInput.text))
         {
             GameData.playerName = nameInput.text;
         }
 
+        // Save enemy speed
         if (speedDropdown != null)
         {
-            // Example dropdown mapping: 0 = Slow (1f), 1 = Normal (2f), 2 = Fast (4f)
             switch (speedDropdown.value)
             {
                 case 0: GameData.enemySpeed = 1f; break;
@@ -55,6 +56,19 @@ public class PreferencesManager : MonoBehaviour
             }
         }
 
-        SceneManager.LoadScene("game"); // Ensure your main game scene is named "game"
+        // Save player health / God Mode
+        if (healthDropdown != null)
+        {
+            switch (healthDropdown.value)
+            {
+                case 0: GameData.playerMaxHealth = 1; break;
+                case 1: GameData.playerMaxHealth = 2; break;
+                case 2: GameData.playerMaxHealth = 3; break;
+                case 3: GameData.playerMaxHealth = 999; break; // God Mode
+            }
+        }
+
+        // Load the main gameplay scene
+        SceneManager.LoadScene("game");
     }
 }

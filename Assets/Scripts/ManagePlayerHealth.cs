@@ -1,31 +1,38 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class ManagePlayerHealth : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private int currentHealth;
+
     void Start()
     {
-
+        currentHealth = GameData.playerMaxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "target" || coll.gameObject.tag == "bullet")
-                //if (coll.gameObject.tag ==
+        if (coll.gameObject.CompareTag("target") || coll.gameObject.CompareTag("bullet"))
         {
             Destroy(coll.gameObject);
-            DestroyPlayer();
+
+            // If God Mode is active, don't take damage or destroy the player
+            if (GameData.playerMaxHealth >= 999)
+            {
+                Debug.Log("God Mode active: Damage ignored!");
+                return;
+            }
+
+            currentHealth--;
+            if (currentHealth <= 0)
+            {
+                DestroyPlayer();
+            }
         }
     }
+
     void DestroyPlayer()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("exit"); // Sends player to exit scene when defeated
     }
 }

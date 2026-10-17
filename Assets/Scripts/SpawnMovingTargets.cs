@@ -1,28 +1,32 @@
 using UnityEngine;
-using static NewEmptyCSharpScript;
 
 public class SpawnMovingTargets : MonoBehaviour
 {
-    float timer = 0; 
-    float spawnInterval = 60f / GameData.spawnRatePerMinute;
+    private float timer = 0f;
     public GameObject newObject;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        float range = Random.Range(-10, 10);
-        Vector3 newPosition = new Vector3(GameObject.Find("player").transform.position.x + range, transform.position.y, 0);
-        if (timer >= 1)
+
+        // Dynamically calculate spawn interval based on the slider value from GameData (1 to 15 per minute)
+        float spawnRate = (GameData.spawnRatePerMinute > 0) ? GameData.spawnRatePerMinute : 5f;
+        float spawnInterval = 60f / spawnRate;
+
+        if (timer >= spawnInterval)
         {
-            GameObject t = (GameObject)(Instantiate(newObject, newPosition, Quaternion.identity));
+            float range = Random.Range(-10f, 10f);
+            Vector3 newPosition = new Vector3(GameObject.Find("player").transform.position.x + range, transform.position.y, 0);
+
+            GameObject t = Instantiate(newObject, newPosition, Quaternion.identity);
             t.GetComponent<ManageTargetHealth>().type = ManageTargetHealth.TARGET_BOULDER;
-            timer = 0;
+
+            timer = 0f;
         }
     }
 }

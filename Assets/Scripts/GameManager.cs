@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static NewEmptyCSharpScript;
 
 public class GameManager : MonoBehaviour
 {

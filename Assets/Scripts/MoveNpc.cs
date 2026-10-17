@@ -7,7 +7,7 @@ public class MoveNpc : MonoBehaviour
     private float timer;
     private float shootingTimer;
     private bool canShoot = true;
-    public float moveSpeed = 2f;
+    public float moveSpeed = 1f; // Slower, controlled speed
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class MoveNpc : MonoBehaviour
 
     void Update()
     {
-        // Continuous movement
+        // Continuous smooth movement
         timer += Time.deltaTime;
         transform.Translate(Vector3.left * direction * Time.deltaTime * moveSpeed);
         if (timer >= 2f)
@@ -60,9 +60,17 @@ public class MoveNpc : MonoBehaviour
         if (canShoot)
         {
             GameObject b = Instantiate(bullet, transform.position + Vector3.down * 1.5f, Quaternion.identity);
+
+            // Mark bullet as an enemy bullet so it doesn't hurt other NPCs
+            Bullet bulletScript = b.GetComponent<Bullet>();
+            if (bulletScript != null)
+            {
+                bulletScript.isPlayerBullet = false;
+            }
+
             if (b.GetComponent<Rigidbody2D>() != null)
             {
-                b.GetComponent<Rigidbody2D>().AddForce(Vector3.down * 1000f);
+                b.GetComponent<Rigidbody2D>().AddForce(Vector3.down * 300f); // Controlled bullet force
             }
             canShoot = false;
             shootingTimer = 0f;
