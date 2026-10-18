@@ -2,34 +2,47 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public bool isPlayerBullet = true; // Check this for player bullets, uncheck for enemy bullets
+    public bool isPlayerBullet = true;
+    public int bulletDamage = 10;
 
     void Start()
     {
-        // Automatically destroy the bullet after 10 seconds if it hits nothing
         Destroy(gameObject, 10f);
     }
 
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
+        GameObject hitObject = collision.gameObject;
 
-    }
-
-    void OnCollisionEnter2D(Collision2D coll)
-    {
         if (isPlayerBullet)
         {
-            // Player bullets should only damage targets or NPCs
-            if (coll.gameObject.CompareTag("target") || coll.gameObject.CompareTag("npc"))
+            if (hitObject.CompareTag("asteroid") || hitObject.CompareTag("Enemy"))
             {
-                coll.gameObject.GetComponent<ManageTargetHealth>()?.gotHit(10);
+                if (hitObject.CompareTag("asteroid"))
+                {
+                    GameData.score += 1;
+                    TargetController target = hitObject.GetComponent<TargetController>();
+                    if (target != null)
+                    {
+                        target.GotHit(bulletDamage);
+                    }
+                }
+                else if (hitObject.CompareTag("Enemy"))
+                {
+                    GameData.score += 5;
+                    EnemyController enemy = hitObject.GetComponent<EnemyController>();
+                    if (enemy != null)
+                    {
+                        enemy.GotHit(bulletDamage);
+                    }
+                }
+
                 Destroy(gameObject);
             }
         }
         else
         {
-            // Enemy bullets should only affect the player
-            if (coll.gameObject.CompareTag("Player") || coll.gameObject.name == "player")
+            if (hitObject.CompareTag("Player") || hitObject.name == "player")
             {
                 Destroy(gameObject);
             }

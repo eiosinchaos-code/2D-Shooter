@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8095897777194099131}
   - component: {fileID: 8087755006398139218}
   - component: {fileID: 8721206793476099965}
-  - component: {fileID: 3650668839121334251}
-  - component: {fileID: 5958732013590556734}
-  m_Layer: 8
-  m_Name: npc1
-  m_TagString: target
+  - component: {fileID: 2397947228458348505}
+  - component: {fileID: -1054600087475627355}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -0.01, y: 4.53, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -145,7 +145,34 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 1
---- !u!114 &3650668839121334251
+--- !u!50 &2397947228458348505
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6762382641683914705}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-1054600087475627355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,27 +181,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6762382641683914705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4750fea9263d5d547a3c1da852cfc619, type: 3}
+  m_Script: {fileID: 11500000, guid: 9577d2c1acaa6f94dabf29d7613e63f6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ManageTargetHealth
-  health: 0
-  type: 0
-  isBlinking: 0
-  timer: 0
-  previousColor: {r: 0, g: 0, b: 0, a: 0}
-  explosion: {fileID: 505067886272128576, guid: 65d47b81e00f89143b5cc93aed809ee6, type: 3}
---- !u!114 &5958732013590556734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6762382641683914705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d6f140f059b8343b44e3ab3d688cf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+  health: 20
+  explosionPrefab: {fileID: 505067886272128576, guid: 65d47b81e00f89143b5cc93aed809ee6, type: 3}
   bullet: {fileID: 7540282126625279993, guid: 68f1cb4a474f95c4eb8dc315f07b387d, type: 3}
-  direction: 1
   moveSpeed: 2
+  direction: 1

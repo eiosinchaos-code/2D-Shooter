@@ -1,70 +1,77 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using TMPro;
+using System.Collections;
+using UnityEngine.Networking;
 
 public class GameManager : MonoBehaviour
 {
-    public TMP_Text playerNameText;
-    public TMP_Text levelText;
-    public TMP_Text timerText;
-    public GameObject pauseMenuUI;
+    [Header("UI Elements (TextMeshPro)")]
+    public TextMeshProUGUI playerNameText;
+    public TextMeshProUGUI levelText;
+    public TextMeshProUGUI timerText;
 
-    private bool isPaused = false;
-    private float countUpTimer = 0f;
+    [Header("Database Settings")]
+    private string serverUrl = "http://104.129.130.168/submit_score.php";
+    private float matchTimer = 0f;
+    private bool isGameOver = false;
 
     void Start()
     {
-        GameData.survivalTime = 0f;
-        GameData.score = 0;
+        // Populate the UI with data saved from the preferences screen
+        if (playerNameText != null)
+        {
+            playerNameText.text = "Player: " + GameData.playerName;
+        }
 
-        if (playerNameText != null) playerNameText.text = "Player: " + GameData.playerName;
-        if (levelText != null) levelText.text = "Level: " + GameData.level;
-        if (pauseMenuUI != null) pauseMenuUI.SetActive(false);
+        if (levelText != null)
+        {
+            levelText.text = "Level: " + GameData.level;
+        }
     }
 
     void Update()
     {
-        // Pause / Resume with ESC key
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!isGameOver)
         {
-            if (isPaused) ResumeGame();
-            else PauseGame();
-        }
+            matchTimer += Time.deltaTime;
 
-        if (!isPaused)
-        {
-            countUpTimer += Time.deltaTime;
-            GameData.survivalTime = countUpTimer;
+            // Update UI timer if assigned
             if (timerText != null)
             {
-                timerText.text = "Time: " + countUpTimer.ToString("F1") + "s";
+                timerText.text = "Time: " + matchTimer.ToString("F1");
             }
         }
+    }
 
-        // Allow player to quit/stop early (e.g., pressing 'Q')
-        if (Input.GetKeyDown(KeyCode.Q))
+    public void TriggerGameOver()
+    {
+        if (isGameOver) return;
+        isGameOver = true;
+
+        // Automatically pass GameData values to the server when game over is called
+        StartCoroutine(PostScoreRoutine(GameData.playerName, GameData.level, GameData.score, matchTimer));
+    }
+
+    private IEnumerator PostScoreRoutine(string playerName, int playerLevel, int playerScore, float playerTime)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("name", playerName);
+        form.AddField("level", playerLevel);
+        form.AddField("score", playerScore);
+        form.AddField("time", playerTime.ToString());
+
+        using (UnityWebRequest www = UnityWebRequest.Post(serverUrl, form))
         {
-            EndGameAndExit();
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Failed to submit score: " + www.error);
+            }
+            else
+            {
+                Debug.Log("Score submitted successfully: " + www.downloadHandler.text);
+            }
         }
-    }
-
-    public void PauseGame()
-    {
-        isPaused = true;
-        Time.timeScale = 0f;
-        if (pauseMenuUI != null) pauseMenuUI.SetActive(true);
-    }
-
-    public void ResumeGame()
-    {
-        isPaused = false;
-        Time.timeScale = 1f;
-        if (pauseMenuUI != null) pauseMenuUI.SetActive(false);
-    }
-
-    public void EndGameAndExit()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("exit");
     }
 }

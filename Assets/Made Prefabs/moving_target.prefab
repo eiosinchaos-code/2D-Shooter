@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 611442408140386557}
   - component: {fileID: 5819522223939882140}
   - component: {fileID: 3093735622648876278}
-  - component: {fileID: 1746077627417241262}
-  - component: {fileID: 1084236529165112459}
-  m_Layer: 9
+  - component: {fileID: 6315140573817071878}
+  m_Layer: 0
   m_Name: moving_target
-  m_TagString: target
+  m_TagString: asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300016, guid: 1bd6c74c058d5f143a391104c445e845, type: 3}
+  m_Sprite: {fileID: 21300030, guid: 1bd6c74c058d5f143a391104c445e845, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,7 +133,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.42, y: 1.22}
+    oldSize: {x: 0.44, y: 0.4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -168,8 +167,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1746077627417241262
+  m_Constraints: 1
+--- !u!114 &6315140573817071878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,24 +177,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4353935688375679585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e877ec07f92b99f4a90e2e614ea9a547, type: 3}
+  m_Script: {fileID: 11500000, guid: 303fec543c8946e4a9ad957c4173f0fe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovingTarget
---- !u!114 &1084236529165112459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4353935688375679585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4750fea9263d5d547a3c1da852cfc619, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ManageTargetHealth
-  health: 5
-  type: 0
-  isBlinking: 0
-  timer: 0
-  previousColor: {r: 0, g: 0, b: 0, a: 0}
-  explosion: {fileID: 505067886272128576, guid: 65d47b81e00f89143b5cc93aed809ee6, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::TargetController
+  fallSpeed: 3
+  health: 20
+  explosionPrefab: {fileID: 505067886272128576, guid: 65d47b81e00f89143b5cc93aed809ee6, type: 3}

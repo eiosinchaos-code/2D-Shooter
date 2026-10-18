@@ -13,7 +13,6 @@ public class ExitManager : MonoBehaviour
 
     void Start()
     {
-        // Display local results
         if (resultsText != null)
         {
             resultsText.text = $"Name: {GameData.playerName}\nLevel: {GameData.level}\nScore: {GameData.score}\nTime: {GameData.survivalTime:F1}s";
@@ -24,7 +23,6 @@ public class ExitManager : MonoBehaviour
 
     IEnumerator UploadScoreAndFetchHighScores()
     {
-        // Build URL with parameters
         string url = $"{updateURL}?name={UnityWebRequest.EscapeURL(GameData.playerName)}&level={GameData.level}&score={GameData.score}&time={GameData.survivalTime}";
 
         UnityWebRequest www = UnityWebRequest.Get(url);
@@ -34,12 +32,7 @@ public class ExitManager : MonoBehaviour
         {
             Debug.LogError("Error uploading score: " + www.error);
         }
-        else
-        {
-            Debug.Log("Score successfully saved to database!");
-        }
 
-        // Now fetch top 5 high scores
         StartCoroutine(GetTopScores());
     }
 
@@ -56,7 +49,20 @@ public class ExitManager : MonoBehaviour
         {
             if (highScoresText != null)
             {
-                highScoresText.text = "--- TOP SCORES ---\n" + www.downloadHandler.text;
+                string[] lines = www.downloadHandler.text.Split(new char[] { '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
+                string displaytext = "--- TOP 5 LEADERBOARD ---\n";
+                int rank = 1;
+
+                foreach (string line in lines)
+                {
+                    if (rank <= 5)
+                    {
+                        displaytext += rank + ". " + line + "\n";
+                        rank++;
+                    }
+                }
+
+                highScoresText.text = displaytext;
             }
         }
     }
